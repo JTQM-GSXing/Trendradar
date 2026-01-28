@@ -208,8 +208,8 @@ display:
                                       # 开启后将对 RSS 进行关键词分析并在通知中展示
                                       # 关闭后跳过分析，但独立展示区不受影响
 
-    standalone: false                 # 独立展示区（完整热榜/RSS，不受关键词过滤）
-    ai_analysis: true                 # AI 分析区域
+    standalone: true                 # 独立展示区（完整热榜/RSS，不受关键词过滤）
+    ai_analysis: false                 # AI 分析区域
 
   # 📋 独立展示区配置（仅在 regions.standalone: true 时生效）
   # 用途：将指定平台的完整热榜/RSS 单独展示，不受关键词过滤影响
@@ -218,7 +218,7 @@ display:
   #   - RSS 源内容较少，希望全部展示而非只显示关键词匹配的
   # 注意：同一新闻可能同时出现在关键词匹配区和独立展示区
   standalone:
-    platforms: [toutiao]                     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    platforms: ["toutiao", "weibo"]                     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
     rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
@@ -256,8 +256,8 @@ notification:
   # 💡 想要精准定时？建议使用 Docker 部署在个人服务器上
   push_window:
     enabled: true                    # 是否启用推送时间窗口控制
-    start: "13:00"                    # 开始时间（北京时间）
-    end: "15:00"                      # 结束时间（北京时间）
+    start: "11:00"                    # 开始时间（北京时间）
+    end: "13:00"                      # 结束时间（北京时间）
     once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
 
   # 推送渠道配置
